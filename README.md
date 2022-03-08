@@ -1,11 +1,10 @@
 # GHFetch - Discover what your friends are upto on GitHub!
 
-# Requirements
+## Working
 
- - [curl](https://github.com/curl/curl)
- - [jq](https://github.com/stedolan/jq)
+This script uses the GitHub API to fetch recent activity of the user. Then displays the details after formatting with `jq`
 
-# How to use
+## How to use
 
 - Get the files
 ```
@@ -20,3 +19,11 @@ chmod +x fetch
 ./fetch <GitHub-UserName>
 ```
 
+## Requirements
+
+ - [curl](https://github.com/curl/curl)
+ - [jq](https://github.com/stedolan/jq)
+
+## Credits
+
+ - [@tsjazil](https://github.com/tsjazil/) for the name!
