@@ -1,4 +1,4 @@
-# GHFetch - Discover what others are upto on GitHub!
+# GHFetch - Discover what your friends are upto on GitHub!
 
 # Requirements
 
