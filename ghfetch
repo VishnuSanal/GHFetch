@@ -12,5 +12,13 @@ if [ ! "$USER" ]; then
 fi
 
 #Fetch!
-curl https://api.github.com/users/$USER/events/public | jq '.[] | {type: .type, repo: .repo.name, when: .created_at}'
+FETCH=$(curl https://api.github.com/users/$USER/events/public)
 
+KEYS=$(jq -r '.[] | .type' <<< $FETCH);
+
+KEYS=($(printf "%s\n" "${KEYS[@]}" | sort -u | tr '\n' ' '))
+
+for key in "${KEYS[@]}"; do
+	echo -e "\n$key:\n"
+	jq '.[] | select( .type == '"\""$key"\""' ) | { repo: .repo.name, when: .created_at }' <<< $FETCH
+done
