@@ -8,15 +8,15 @@ This script uses the GitHub API to fetch recent activity of the user. Then displ
 
 - Get the files
 ```
-wget https://raw.githubusercontent.com/VishnuSanal/GHFetch/main/fetch
+wget https://raw.githubusercontent.com/VishnuSanal/GHFetch/main/ghfetch
 ```
 - Give permissions
 ```
-chmod +x fetch
+chmod +x ghfetch
 ```
 - Run!
 ```
-./fetch <GitHub-UserName>
+./ghfetch <GitHub-UserName>
 ```
 
 ## Requirements
