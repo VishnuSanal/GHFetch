@@ -14,9 +14,7 @@ fi
 #Fetch!
 FETCH=$(curl https://api.github.com/users/$USER/events/public)
 
-KEYS=$(jq -r '.[] | .type' <<< $FETCH);
-
-KEYS=($(printf "%s\n" "${KEYS[@]}" | sort -u | tr '\n' ' '))
+KEYS=($(printf "%s\n" "$(jq -r '.[] | .type' <<< $FETCH)" | sort -u | tr '\n' ' '))
 
 for key in "${KEYS[@]}"; do
 	echo -e "\n$key:\n"
