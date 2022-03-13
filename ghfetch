@@ -20,5 +20,5 @@ KEYS=($(printf "%s\n" "${KEYS[@]}" | sort -u | tr '\n' ' '))
 
 for key in "${KEYS[@]}"; do
 	echo -e "\n$key:\n"
-	jq '.[] | select( .type == '"\""$key"\""' ) | { repo: .repo.name, when: .created_at }' <<< $FETCH
+	jq '[.[] | select( .type == '"\""$key"\""' ) | { repo: .repo.name, when: .created_at }]' <<< $FETCH
 done
